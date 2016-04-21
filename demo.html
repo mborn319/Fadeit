@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fade It</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <style>
+      .container {
+        width: 1000px;
+        margin: 0 auto;
+      }
+      /** mimic Bootstrap's fade-in styles */
+      .fade {
+        opacity: 0;
+        transition: .4s opacity ease;
+      }
+      .fade.in {
+        opacity: 1;
+      }
+
+      /* resize icons, add colors */
+      .fa {
+        font-size: 8em;
+        margin: .5em;
+      }
+      .fa.warning {
+        color: #ff5900;
+      }
+      .fa.success {
+        color: #177310;
+      }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+      <h1>Fade It</h1>
+      <p>Fade a group of items using this simple script.</p>
+
+        <i class="fa fa-question-circle-o fade" aria-hidden="true"></i>
+        <i class="fa fa-question-circle-o fade" aria-hidden="true"></i>
+        <i class="fa fa-question-circle-o fade" aria-hidden="true"></i>
+        <i class="fa fa-question-circle-o fade" aria-hidden="true"></i>
+        <i class="fa fa-question-circle-o fade" aria-hidden="true"></i>
+        <i class="fa fa-question-circle-o fade" aria-hidden="true"></i>
+        <i class="fa fa-question-circle-o fade success" aria-hidden="true"></i>
+        <i class="fa fa-question-circle-o fade warning" aria-hidden="true"></i>
+    </div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="src/fadeit.js"></script>
+</body>
+</html>
