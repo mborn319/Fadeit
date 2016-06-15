@@ -1,17 +1,17 @@
 applyClass = function(opts) {
-  var opts = {},
-    opts.items = opts.items || $(".fa"),
-    opts.delay = opts.delay || 100,
-    opts.classtoapply = opts.classtoapply || "in";
+  var options = opts || {};
+    options.items         = typeof opts.items !== "undefined" ? opts.items : $(".fa"),
+    options.delay         = typeof opts.delay !== "undefined" ? opts.delay : 100,
+    options.classtoapply  = typeof opts.classtoapply !== "undefined" ? opts.classtoapply : "in";
 
   var applyIt = function(index) {
-    opts.items.eq(index).addClass(opts.classtoapply);//Bootstrap's fade in style
-    if (index<opts.items.length){
-      setTimeout(function() {applyIt(index+1);},delay);
+    options.items.eq(index).addClass(options.classtoapply);//Bootstrap's fade in style
+    if (index<options.items.length){
+      setTimeout(function() {applyIt(index+1);},options.delay);
     }
   };
 
     //start the timer/loop;
     applyIt(0);
-};  
+};
 $(document).on("ready",applyClass);
