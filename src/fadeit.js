@@ -1,15 +1,17 @@
-fadeIcons = function() {
-  var allIcons = $(".fa"),
-      delay = 100;
+applyClass = function(opts) {
+  var opts = {},
+    opts.items = opts.items || $(".fa"),
+    opts.delay = opts.delay || 100,
+    opts.classtoapply = opts.classtoapply || "in";
 
-  var fadeIt = function(index) {
-      allIcons.eq(index).addClass("in");//Bootstrap's fade in style
-      if (index<allIcons.length){
-        setTimeout(function() {fadeIt(index+1);},delay);
-      }
-    };
+  var applyIt = function(index) {
+    opts.items.eq(index).addClass(opts.classtoapply);//Bootstrap's fade in style
+    if (index<opts.items.length){
+      setTimeout(function() {applyIt(index+1);},delay);
+    }
+  };
 
     //start the timer/loop;
-    fadeIt(0);
+    applyIt(0);
 };  
-$(document).on("ready",fadeIcons);
+$(document).on("ready",applyClass);
